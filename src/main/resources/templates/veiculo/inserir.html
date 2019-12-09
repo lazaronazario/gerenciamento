@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xlmns="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CostaEduardo</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<h3>Inserir novo veículo</h3>
+	<form class="form-horizontal" action="/veiculo/inserir" method="post" th:objects="${veiculos}">
+		<div class="row">
+			<div class="form-group col-md-6">
+				<label>Empresa:</label>
+				<input type="text" maxlength="30" class="form-control" th:field="*{empresa}">
+			</div>
+		</div>
+<!-- 		<div class="row"> -->
+<!-- 			<div class="form-group col-md-6"> -->
+<!-- 				<label>Modelo:</label> -->
+<!-- 				<input type="text" required maxlength="30" class="form-control" th:field="*{modelo}"> -->
+<!-- 			</div> -->
+<!-- 		</div>		 -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="form-group col-md-6"> -->
+<!-- 				<label>Ano:</label> -->
+<!-- 				<input type="number" required maxlength="4" class="form-control" th:field="*{ano}"> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="form-group col-md-6"> -->
+<!-- 				<label>Peça:</label> -->
+<!-- 				<input type="text" required maxlength="50" class="form-control" th:field="*{peca}"> -->
+<!-- 			</div> -->
+<!-- 		</div>	 -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="form-group col-md-6"> -->
+<!-- 				<label>Descricao Manutenção:</label> -->
+<!-- 				<input type="text" required maxlength="30" class="form-control" th:field="*{descricaoManutencao}"> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="form-group col-md-6"> -->
+<!-- 				<label>Data da manutenção:</label> -->
+<!-- 				<input type="date" class="form-control" th:field="*{dataManutencao}"> -->
+<!-- 			</div> -->
+<!-- 		</div>					 -->
+	</form>
+	
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "tb_veiculo")
 public class Veiculo {
@@ -28,6 +30,7 @@ public class Veiculo {
 	private int ano;
 
 	@Column(name = "dataManutencao", nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataManutencao;
 
 	@Column(name = "peca", length = 50, nullable = false)

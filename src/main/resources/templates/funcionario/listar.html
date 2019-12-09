@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xlmns="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CostaEduardo</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<div class="container">
+		<h3>Listagem de funcionários</h3>
+				<form class="form-inline">
+						<div class="form-group mx-lg-1 mb-1">
+							<label for="inputPassword2" class="sr-only">Nome</label> <input	type="text" class="form-control" id="inputPassword2" placeholder="Nome">
+						</div>
+						<button type="submit" class="btn btn-primary mb-2" style="margin: 1px">Pesquisar</button>
+				</form>		
+		<div th:each="funcionario: ${funcionarios}" style="margin: 10px">
+			<button class="btn btn-primary" type="button" data-toggle="collapse"
+				data-target="#collapseExample" aria-expanded="false"
+				aria-controls="collapseExample" th:text="${funcionario.nome}"></button>
+			<div class="card bg-light mb-3">
+				<div class="card-header" th:text="${funcionario.nome}"></div>
+				<div class="collapse" id="collapseExample">
+					<div class="card-body">
+						<p class="card-text" th:text="${funcionario.idade}"></p>
+						<p class="card-text" th:text="${funcionario.funcao}"></p>
+						<p class="card-text" th:text="${funcionario.endereco}"></p>
+						<p class="card-text" th:text="${'Data de admissão: ' + #dates.format(funcionario.dataAdmissao, 'dd/MM/yyyy')}"></p>
+						<p class="card-text" th:text="${'Data de demissão: ' + #dates.format(funcionario.dataDemissao, 'dd/MM/yyyy')}"></p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

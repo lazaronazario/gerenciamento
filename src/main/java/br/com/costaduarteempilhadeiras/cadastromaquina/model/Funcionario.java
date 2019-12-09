@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "tb_funcionario")
 public class Funcionario {
@@ -31,9 +33,11 @@ public class Funcionario {
 	private String funcao;
 
 	@Column(name = "dataAdmissao", nullable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataAdmissao;
 
 	@Column(name = "dataDemissao", nullable = true)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataDemissao;
 
 	public Long getId() {

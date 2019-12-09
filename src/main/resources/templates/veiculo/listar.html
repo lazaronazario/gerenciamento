@@ -13,26 +13,28 @@
 						<div class="form-group mx-lg-1 mb-1">
 							<label for="inputPassword2" class="sr-only">Empresa</label> <input	type="text" class="form-control" id="inputPassword2" placeholder="Empresa">
 						</div>
-						<button type="submit" class="btn btn-primary mb-2" style="margin: 1px">Pesquisar</button>
+						<button type="submit" class="btn btn-primary mb-1" style="margin: 1px">Pesquisar</button>
+						<button href="/veiculo/inserir" class="btn btn-success mb-1" style="margin: 1px">Adicionar</button>
+						<button type="submit" class="btn btn-warning mb-1" style="margin: 1px">excluir</button>
 				</form>		
-		<div th:each="veiculo: ${veiculos}" style="margin: 10px">
-			<button class="btn btn-primary" type="button" data-toggle="collapse"
-				data-target="#collapseExample" aria-expanded="false"
-				aria-controls="collapseExample" th:text="${veiculo.empresa}"></button>
-			<div class="card bg-light mb-3">
-				<div class="card-header" th:text="${veiculo.empresa}"></div>
-				<div class="collapse" id="collapseExample">
-					<div class="card-body">
-						<p class="card-text" th:text="${veiculo.modelo}"></p>
-						<p class="card-text" th:text="${veiculo.ano}"></p>
-						<p class="card-text" th:text="${veiculo.peca}"></p>
-						<p class="card-text"
-							th:text="${'Data de manutenção: ' + #dates.format(veiculo.dataManutencao, 'dd/MM/yyyy')}"></p>
-						<p class="card-text" th:text="${veiculo.descricaoManutencao}"></p>
-					</div>
-				</div>
-			</div>
-		</div>
+<!-- 		<div th:each="veiculo: ${veiculos}" style="margin: 10px"> -->
+<!-- 			<button class="btn btn-primary" type="button" data-toggle="collapse" -->
+<!-- 				data-target="#collapseExample" aria-expanded="false" -->
+<!-- 				aria-controls="collapseExample" th:text="${veiculo.empresa}"></button> -->
+<!-- 			<div class="card bg-light mb-3"> -->
+<!-- 				<div class="card-header" th:text="${veiculo.empresa}"></div> -->
+<!-- 				<div class="collapse" id="collapseExample"> -->
+<!-- 					<div class="card-body"> -->
+<!-- 								<p class="card-text" th:text="${veiculo.modelo}" ></p> -->
+<!-- 								<p class="card-text" th:text="${veiculo.ano}"></p> -->
+<!-- 								<p class="card-text" th:text="${veiculo.peca}"></p> -->
+<!-- 						<p class="card-text" -->
+<!-- 							th:text="${'Data de manutenção: ' + #dates.format(veiculo.dataManutencao, 'dd/MM/yyyy')}"></p> -->
+<!-- 						<p class="card-text" th:text="${veiculo.descricaoManutencao}"></p> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 	</div>
 
 	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
