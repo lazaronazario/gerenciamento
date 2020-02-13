@@ -8,11 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-<<<<<<< HEAD
 import javax.validation.constraints.NotNull;
-=======
->>>>>>> parent of 3643867... validações na view
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -25,11 +23,16 @@ public class Veiculo {
 	private Long IdVeiculo;
 
 	@Column(name = "empresa", length = 30, nullable = false)
+	@NotNull(message="O nome da empresa deve ser preenchido!")
+	@Length(max = 30, min = 3, message="O nome da empresa deve ter no mínimo 3 e no máximo 30 caracteres!")
 	private String empresa;
-
+	
+	@NotNull(message="O modelo deve ser preenchido!")
+	@Length(max = 30, min = 3, message="O modelo deve ter no mínimo 3 e no máximo 30 caracteres!")	
 	@Column(name = "modelo", length = 30, nullable = false)
 	private String modelo;
 
+	@NotNull(message="O ano deve ser preenchido!")
 	@Column(name = "ano", length = 4, nullable = false)
 	private int ano;
 

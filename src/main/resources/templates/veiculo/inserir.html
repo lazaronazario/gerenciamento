@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html xlmns:th="http://www.thymeleaf.org">
-=======
-<html xlmns="http://thymeleaf.org">
->>>>>>> parent of 3643867... validações na view
 <head>
 <meta charset="UTF-8">
 <title>CostaEduardo</title>
@@ -16,42 +12,45 @@
 	<form class="form-horizontal" action="/veiculo/inserir" method="post" th:object="${veiculo}">	
 		<div class="row">
 			<div class="form-group col-md-6">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('empresa')}">
+					<label th:errors="*{empresa}" class="validation-message"></label>
+				</div>
 				<label>Empresa:</label>
 				<input type="text" class="form-control" th:field="*{empresa}">
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-6">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('modelo')}">
+					<label th:errors="*{modelo}" class="validation-message"></label>
+				</div>			
 				<label>Modelo:</label>
-				<input type="text" required maxlength="30" class="form-control" th:field="*{modelo}">
+				<input type="text"  class="form-control" th:field="*{modelo}">
 			</div>
 		</div>		
 		<div class="row">
 			<div class="form-group col-md-6">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('ano')}">
+					<label th:errors="*{ano}" class="validation-message"></label>
+				</div>			
 				<label>Ano:</label>
-				<input type="number" required maxlength="4" class="form-control" th:field="*{ano}">
+				<input type="number"  class="form-control" th:field="*{ano}">
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-6">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('peca')}">
+					<label th:errors="*{peca}" class="validation-message"></label>
+				</div>			
 				<label>Peça:</label>
-				<input type="text" required maxlength="50" class="form-control" th:field="*{peca}">
+				<input type="text"  class="form-control" th:field="*{peca}">
 			</div>
 		</div>	
 		<div class="row">
 			<div class="form-group col-md-6">
-<<<<<<< HEAD
 				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('dataManutencao')}">
 					<label th:errors="*{dataManutencao}" class="validation-message"></label>
 				</div>				
-=======
-				<label>Descricao Manutenção:</label>
-				<input type="text" required maxlength="30" class="form-control" th:field="*{descricaoManutencao}">
-			</div>
-		</div>
-		<div class="row">
-			<div class="form-group col-md-6">
->>>>>>> parent of 3643867... validações na view
 				<label>Data da manutenção:</label>
 				<input type="date" class="form-control" th:field="*{dataManutencao}">
 			</div>
