@@ -1,16 +1,20 @@
 package br.com.costaduarteempilhadeiras.cadastromaquina.controller;
 
+<<<<<<< HEAD
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+=======
+import javax.validation.ReportAsSingleViolation;
+
+>>>>>>> parent of 3643867... validações na view
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import br.com.costaduarteempilhadeiras.cadastromaquina.model.Veiculo;
 import br.com.costaduarteempilhadeiras.cadastromaquina.repositories.RepositorioVeiculo;
 
@@ -28,7 +32,7 @@ public class VeiculoController {
 		mv.addObject("veiculos", repositorioVeiculo.findAll());
 		return mv;
 	}
-
+	
 	@GetMapping("/inserir")
 	public ModelAndView inserir() {
 		ModelAndView mv = new ModelAndView();
@@ -36,8 +40,9 @@ public class VeiculoController {
 		mv.addObject("veiculo", new Veiculo());
 		return mv;
 	}
-
+	
 	@PostMapping("/inserir")
+<<<<<<< HEAD
 	public ModelAndView inserir(@Valid Veiculo veiculo, BindingResult result) {
 		ModelAndView mv = new ModelAndView();
 
@@ -92,6 +97,10 @@ public class VeiculoController {
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id) {
 		repositorioVeiculo.deleteById(id);
+=======
+	public String inserir(Veiculo veiculo) {
+		repositorioVeiculo.save(veiculo);
+>>>>>>> parent of 3643867... validações na view
 		return "redirect:/veiculo/listar";
 	}
 }

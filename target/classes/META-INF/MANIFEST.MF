@@ -3,7 +3,7 @@ Implementation-Title: cadastro-maquina
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: jose.lazaro.n.silva
 Implementation-Vendor-Id: br.com.costaduarteempilhadeiras
-Build-Jdk: 1.8.0_221
+Build-Jdk: 1.8.0_241
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/cadastro-maquina
 Created-By: Maven Integration for Eclipse
