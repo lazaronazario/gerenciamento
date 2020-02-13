@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xlmns="http://www.thymeleaf.org">
+<html xlmns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>CostaEduardo</title>
@@ -9,8 +9,7 @@
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 	<div class="container">
 	<h3>Inserir novo veículo</h3>
-	<form class="form-horizontal" action="/veiculo/inserir" method="post" th:object="${veiculos}">
-	
+	<form class="form-horizontal" action="/veiculo/inserir" method="post" th:object="${veiculo}">	
 		<div class="row">
 			<div class="form-group col-md-6">
 				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('empresa')}">
@@ -49,22 +48,22 @@
 		</div>	
 		<div class="row">
 			<div class="form-group col-md-6">
-				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('descricaoManutencao')}">
-					<label th:errors="*{descricaoManutencao}" class="validation-message"></label>
-				</div>			
-				<label>Descricao Manutenção:</label>
-				<input type="text" class="form-control" th:field="*{descricaoManutencao}">
-			</div>
-		</div>
-		<div class="row">
-			<div class="form-group col-md-6">
 				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('dataManutencao')}">
 					<label th:errors="*{dataManutencao}" class="validation-message"></label>
 				</div>				
 				<label>Data da manutenção:</label>
 				<input type="date" class="form-control" th:field="*{dataManutencao}">
 			</div>
-		</div>					
+		</div>
+		<div class="row">
+			<div class="form-group col-md-6">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('descricaoManutencao')}">
+					<label th:errors="*{descricaoManutencao}" class="validation-message"></label>
+				</div>			
+				<label>Descrição da Manutenção:</label>
+				<textarea type="text" rows="3" class="form-control" th:field="*{descricaoManutencao}"></textarea>
+			</div>
+		</div>							
 		<button type="submit" class="btn btn-success">Salvar</button>
 	</form>
 		</div>

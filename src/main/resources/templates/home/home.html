@@ -8,7 +8,17 @@
 <body>
 		<div th:replace="fragmentos/fragmentos :: cabecalho" ></div>
 	<div class="container">
-	<p>teste</p>
+	  <form>
+		  <div class="form-group">
+		    <label for="exampleFormControlFile1">Selecionar a planilha</label>
+		    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+		  </div>
+		  <button type="submit" class="btn btn-primary mb-3" style="margin: 1px">Transformar</button>
+		    <div class="form-group">
+			    <label for="exampleFormControlTextarea1">Exemplo de raml</label>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" style="margin-top: 0px; margin-bottom: 0px; height: 800px;"></textarea>
+			</div>
+	  </form>
 	</div>
 	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

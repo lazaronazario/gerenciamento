@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xlmns="http://www.thymeleaf.org">
+<html xlmns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>CostaEduardo</title>
@@ -22,15 +22,14 @@
 				data-target="#collapseExample" aria-expanded="false"
 				aria-controls="collapseExample" th:text="${veiculo.empresa}"></button>
 			<div class="card bg-light mb-3">
-				<div class="card-header" th:text="${veiculo.empresa}"></div>
+				<div class="card-header" th:text="${veiculo.modelo}"></div>
 				<div class="collapse" id="collapseExample">
 					<div class="card-body">
-								<p class="card-text" th:text="${veiculo.modelo}" ></p>
+<!-- 								<p class="card-text" th:text="${veiculo.modelo}" ></p> -->
 								<p class="card-text" th:text="${veiculo.ano}"></p>
 								<p class="card-text" th:text="${veiculo.peca}"></p>
-						<p class="card-text"
-							th:text="${'Data de manutenção: ' + #dates.format(veiculo.dataManutencao, 'dd/MM/yyyy')}"></p>
-						<p class="card-text" th:text="${veiculo.descricaoManutencao}"></p>
+								<p class="card-text" th:text="${'Data de manutenção: ' + #dates.format(veiculo.dataManutencao, 'dd/MM/yyyy')}"></p>
+								<p class="card-text" th:text="${veiculo.descricaoManutencao}"></p>
 					</div>
 				</div>
 			</div>

@@ -2,7 +2,6 @@ package br.com.costaduarteempilhadeiras.cadastromaquina.controller;
 
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.ReportAsSingleViolation;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,34 +33,34 @@ public class VeiculoController {
 	public ModelAndView inserir() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/veiculo/inserir");
-		mv.addObject("veiculos", new Veiculo());
+		mv.addObject("veiculo", new Veiculo());
 		return mv;
 	}
 
 	@PostMapping("/inserir")
-	public ModelAndView inserir(@Valid Veiculo veiculos, BindingResult result, HttpServletRequest request) {
+	public ModelAndView inserir(@Valid Veiculo veiculo, BindingResult result) {
 		ModelAndView mv = new ModelAndView();
 
-		if (veiculos.getDataManutencao() == null) {
+		if (veiculo.getDataManutencao() == null) {
 			result.rejectValue("dataManutencao", "veiculo.DataExpericacaoInvalida",
 					"A data de manutenção não pode ser posterior a data atual!");
 		} else {
-			if (veiculos.getDataManutencao().after(new Date())) {
+			if (veiculo.getDataManutencao().after(new Date())) {
 				result.rejectValue("dataManutencao", "veiculo.DataExpericacaoInvalida",
 						"A data de manutenção não pode ser posterior a data atual!");
 			}
 		}
 		
-		if (veiculos.getEmpresa() == null || veiculos.getEmpresa().length() < 3) {
-			result.rejectValue("Empresa", "veiculo.EmpresaInvalida", "Favor preencher corretamente o nome da empresa!");
-		}
+//		if (veiculos.getEmpresa() == null || veiculos.getEmpresa().length() < 3) {
+//			result.rejectValue("Empresa", "veiculo.EmpresaInvalida", "Favor preencher corretamente o nome da empresa!");
+//		}
 
 		if (result.hasErrors()) {
-			mv.setViewName("veiculo/inserir");
-			mv.addObject(veiculos);
+			mv.setViewName("veiculo/inserir");	
+			mv.addObject(veiculo);		
 		} else {
 			mv.setViewName("redirect:/veiculo/listar");
-			repositorioVeiculo.save(veiculos);
+			repositorioVeiculo.save(veiculo);
 		}
 		return mv;
 	}
